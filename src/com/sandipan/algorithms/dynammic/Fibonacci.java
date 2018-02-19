@@ -27,7 +27,7 @@ public class Fibonacci {
 	/**
 	 * Fibonacci Series using the Bottom Up approach.
 	 * @param n
-	 * @return
+	 * @return returns the value of the nth number in the Fibonacci Series.
 	 */
 	public long fibSeriesBottomUp(int n)
 	{
@@ -44,7 +44,7 @@ public class Fibonacci {
 	/**
 	 * Fibonacci Series using the Top Down Approach.
 	 * @param n
-	 * @return
+	 * @return the value of the nth number in the Fibonacci Series.
 	 */
 	public long fibSeriesTopDown(int n)
 	{
@@ -65,7 +65,7 @@ public class Fibonacci {
 	/**
 	 * Fibonacci Series using the Recursive Approach.
 	 * @param n
-	 * @return
+	 * @returns the value of the nth number in the Fibonacci Series.
 	 */
 	public long fibSeriesRecursive(int n)
 	{
@@ -79,7 +79,7 @@ public class Fibonacci {
 	/**
 	 * Simple implementation Fibonacci Series.
 	 * @param n
-	 * @return
+	 * @returns the value of the nth number in the Fibonacci Series.
 	 */
 	public long fibSeries(int n)
 	{
