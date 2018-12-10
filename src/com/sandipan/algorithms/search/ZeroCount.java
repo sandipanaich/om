@@ -35,7 +35,7 @@ public class ZeroCount {
 		int start = 0;
 		int end = array.length;
 
-		if (start > end || array.length == 0)
+		if (/*start > end || */array.length == 0)
 			return 0;
 		if (array[0] == 0)
 			return array.length;

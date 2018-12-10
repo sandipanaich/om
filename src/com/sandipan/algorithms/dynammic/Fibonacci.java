@@ -10,18 +10,18 @@ package com.sandipan.algorithms.dynammic;
 /**
  * Fibonacci Series Implementation.
  * @author Sandipan Aich
- * @since 19 Feb 2019
+ * @since 07 July 2018
  */
 public class Fibonacci {
 
 	public static void main(String[] args) 
 	{
 		Fibonacci series = new Fibonacci();
-		int n = 10;
+		int n = 100;
 		System.out.println("Fibonacci :: main :: "+ n +"th value in Fibonacci Series using Bottom Up Dynamic Approach :: "+ series.fibSeriesBottomUp(n));
 		System.out.println("Fibonacci :: main :: "+ n +"th value in Fibonacci Series using Top Down  Dynamic Approach :: "+ series.fibSeriesTopDown(n));
-		System.out.println("Fibonacci :: main :: "+ n +"th value in Fibonacci Series using Recursive Approach :: "+ series.fibSeriesRecursive(n));
 		System.out.println("Fibonacci :: main :: "+ n +"th value in Fibonacci Series using a Simpler Approach :: "+ series.fibSeries(n));
+		System.out.println("Fibonacci :: main :: "+ n +"th value in Fibonacci Series using Recursive Approach :: "+ series.fibSeriesRecursive(n));
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class Fibonacci {
 	{
 		long[] series = new long[n];
 		series[0]  =  series[1] = 1;
-				
+		
 		return _fib( n, series);
 	}
 	

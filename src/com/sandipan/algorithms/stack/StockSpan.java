@@ -12,18 +12,25 @@ import java.util.Stack;
 
 /**
  * StockSpan implementation using Stack and simple arrays
+ * 
  * @author Sandipan Aich
  *
  */
+
+//{ 100, 80, 60, 70, 60, 75, 85, 110 }
+//{   1   1   1   2   1   4   6    8 }
+
 public class StockSpan {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(Arrays.toString(new StockSpan().spans(new int[] { 100, 80, 60, 70, 60, 75, 85 })));
-		System.out.println(Arrays.toString(new StockSpan().spansWithStack(new int[] { 100, 80, 60, 70, 60, 75, 85 })));
+		System.out.println(Arrays.toString(new StockSpan().spans(new int[] { 100, 80, 60, 70, 60, 75, 85, 110 })));
+		System.out.println(Arrays.toString(new StockSpan().spansWithStack(new int[] { 100, 80, 60, 70, 60, 75, 85, 110 })));
 	}
 
 	/**
-	 * A Simple Stock Span implementation using arrays with time complexity for O(n^2)
+	 * A Simple Stock Span implementation using arrays with time complexity for
+	 * O(n^2)
+	 * 
 	 * @param stocks
 	 * @return
 	 */
@@ -43,34 +50,27 @@ public class StockSpan {
 
 	/**
 	 * A Stock Span implementation using stack with time complexity for O(n)
+	 * 
 	 * @param stocks
 	 * @return
 	 */
-	private int[] spansWithStack(int[] stocks) {
+	private int[] spansWithStack(int stocks[])
+    {
+        Stack<Integer> stack= new Stack<>();
+        int[] S = new int[stocks.length];
 
-		Stack<Integer> stack = new Stack<>();
-
-		int[] S = new int[stocks.length];
-		S[0] = 1;
-		stack.push(0);
-
-		for (int i = 1; i < stocks.length; i++) {
-			
-			if (stocks[i - 1] > stocks[i]) {
-				S[i] = 1;
-				stack.push(i);
-				
-			} else {
-				int index = i;
-				while (stocks[index] <= stocks[i]) {
-					index = stack.pop();
-				}
-				S[i] = i - index;
-				stack.push(index);
-				stack.push(i);
-			}
-		}
+        stack.push(0); 
+        S[0] = 1;
+         
+        for (int i = 1; i < stocks.length; i++)
+        {
+            while (!stack.empty() && stocks[stack.peek()] <= stocks[i])
+                stack.pop();
+     
+            S[i] = (stack.empty())? (i + 1) : (i - stack.peek());
+     
+            stack.push(i);
+        }
 		return S;
-	}
-
+    }
 }
